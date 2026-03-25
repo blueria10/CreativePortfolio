@@ -1,0 +1,458 @@
+
+
+.repeat{
+	width: 98%;
+	height: 90%;
+	word-wrap: break-word;
+	font-size: 30px;
+	text-align: justify;
+	padding-left: 17px;
+	padding-top: 0px;
+}
+
+a{
+	text-decoration: none;
+	color: limegreen;
+}
+a:hover{
+	color: rgb(255, 255, 255);
+}
+
+#artOnly img{
+	width: 300px;
+}
+
+p{
+	font-size: 25px;
+	text-align: center;
+	padding: 100px;
+	padding-top:50px;
+	color:limegreen;
+	font-weight: 500;
+	background:black;
+}
+h2{
+	padding-top: 50px;
+	font-size:  35px;
+}
+
+#Exhibitions a{
+	font-size: 50px;
+}
+
+#techOnly a{
+	font-size: 50px;
+}
+
+#artTech a{
+	font-size: 50px;
+}
+
+/* Core Styling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #000000; /* Deep black for maximum contrast */
+  color: #32CD32; /* LimeGreen */
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Leave .repeat alone as requested, but ensure container looks right */
+.repeat {
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 50px;
+}
+
+/* Section Containers */
+div[id] {
+  padding: 80px 10%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: clamp(2rem, 8vw, 4rem); /* Responsive size */
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  text-align: left;
+  border-left: 8px solid #32CD32;
+  padding-left: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: left;
+  color: #c0c0c0; /* Dimmer text for better hierarchy */
+  background: transparent !important; /* Removes the black box background */
+  padding: 0 !important;
+  max-width: 700px;
+}
+
+/* Art Gallery - Interactive Grid */
+#artOnly {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin-top: 40px;
+}
+
+#artOnly img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border: 1px solid #333;
+  filter: grayscale(100%) brightness(0.7);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: crosshair;
+}
+
+#artOnly img:hover {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.03);
+  border-color: #32CD32;
+  box-shadow: 0 0 20px rgba(50, 205, 50, 0.3);
+  z-index: 10;
+}
+
+
+/* Decorative divider */
+br {
+  display: block;
+  margin: 20px 0;
+  content: "";
+}
+
+/* Mobile Fixes */
+@media (max-width: 768px) {
+  div[id] { padding: 40px 5%; }
+  h2 { font-size: 2.5rem; }
+}
+
+body::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+              linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 9999;
+  pointer-events: none;
+  background-size: 100% 2px, 3px 100%;
+}
+
+.y2k-sticker {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #32CD32;
+  color: black;
+  padding: 10px 20px;
+  font-weight: 900;
+  transform: rotate(15deg);
+  z-index: 100;
+  border: 3px solid black;
+  box-shadow: 5px 5px 0px white;
+  font-family: 'Courier New', monospace;
+}
+
+.blue-sticker {
+  top: 80px;
+  right: 40px;
+  background: cyan;
+  transform: rotate(-10deg);
+  box-shadow: 5px 5px 0px #32CD32;
+}
+
+/*Indie animation*/
+#Upcoming p {
+  animation: indieWobble 0.5s infinite alternate;
+  display: inline-block;
+  color: #32CD32;
+  text-shadow: 2px 2px 0px magenta;
+}
+
+@keyframes indieWobble {
+  0% { transform: skewX(-2deg) translateY(0); }
+  100% { transform: skewX(2deg) translateY(-2px); }
+}
+
+html {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><text y="15" font-size="15">✦</text></svg>'), auto;
+}
+
+a:hover {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><text y="15" font-size="15">✨</text></svg>'), pointer;
+}
+#artOnly img:hover {
+  filter: grayscale(0%) contrast(1.2);
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 
+    10px 10px 0px magenta,
+    -10px -10px 0px rgb(0, 255, 76);
+  border: 4px solid white;
+}
+
+/* --- Y2K SECTION TITLES --- */
+h2 {
+    font-size: 3rem;
+    color: #000;
+    background: #32CD32;
+    display: inline-block;
+    padding: 10px 30px;
+    transform: rotate(-2deg);
+    border: 4px solid #fff;
+    box-shadow: 8px 8px 0px #ff00ff; /* Hot pink offset */
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    cursor: help;
+    transition: 0.3s;
+}
+
+h2:hover {
+    transform: rotate(2deg) scale(1.1);
+    box-shadow: -8px 8px 0px cyan;
+}
+
+
+
+/* --- EXTRA Y2K TOUCH: RAINBOW SEPARATOR --- */
+hr {
+    border: none;
+    height: 10px;
+    background: linear-gradient(90deg, #32CD32, cyan, #ff00ff, yellow);
+    margin: 50px 0;
+}
+
+/* Intro Paragraph */
+.intro-text {
+    grid-column: 1 / -1; /* Makes the intro text span across the top of the grid */
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+
+.tv-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px auto;
+    width: 95%; /* Spans most of the page */
+    max-width: 1200px;
+}
+
+/* The Monitor Body */
+.video-monitor {
+    position: relative;
+    background: #1a1a1a; /* Dark gray plastic look */
+    border: 10px solid #222; /* Thick physical frame */
+    border-bottom-width: 25px; /* Thicker bottom for "buttons" */
+    border-radius: 5px;
+	min-width: 400px; /* So they never get too tiny */
+    box-shadow: 
+        inset 0 0 15px rgba(0,0,0,1), /* Inner shadow for depth */
+        8px 8px 0px #ff00ff; /*  Indie Pink shadow */
+    overflow: hidden;
+}
+
+/* The Curved Glass Screen Effect */
+.video-monitor::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* This creates a "glare" highlight on the top left */
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* The Screen Content (Video) */
+.tv-content {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    /* This "bulges" the video slightly like a tube TV */
+    transform: scale(1.05); 
+    filter: brightness(0.9) contrast(1.2);
+    /* Constant subtle hum/flicker */
+    animation: tv-hum 0.2s infinite;
+}
+
+/* Subtle Signal Noise Animation */
+@keyframes tv-hum {
+    0% { opacity: 0.98; transform: scale(1.05) translate(0,0); }
+    50% { opacity: 1; transform: scale(1.05) translate(0.5px, 0.5px); }
+    100% { opacity: 0.98; transform: scale(1.05) translate(0,0); }
+}
+
+/* The "Power Light" on the bottom frame */
+.video-monitor::after {
+    content: "";
+    position: absolute;
+    bottom: 7px;
+    right: 15px;
+    width: 6px;
+    height: 6px;
+
+    background: #32CD32; /* Power LED Green */
+    border-radius: 50%;
+    box-shadow: 0 0 5px #32CD32;
+    z-index: 6;
+}
+/* --- THE HOVER "POP" --- */
+.video-monitor:hover {
+    /* Scale(1.15) makes it significantly larger */
+    transform: scale(1.4) translateY(-20px); 
+    
+    /* Bring to front so it doesn't hide behind neighbors */
+    z-index: 100; 
+    
+    /* Brighter border and Cyan shadow for that "Active" look */
+    border-color: #333;
+    box-shadow: 25px 25px 0px cyan; 
+}
+
+
+/*Improve exhibition and tech links*/
+#Exhibitions {
+    padding: 80px 20px;
+    background: radial-gradient(circle at top right, rgba(0, 255, 255, 0.05), transparent 600px);
+}
+
+.section-label {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #32CD32;
+    margin-bottom: 50px;
+    letter-spacing: 4px;
+    text-shadow: 0 0 8px rgba(50, 205, 50, 0.5);
+}
+
+/* The Card Container */
+.art-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03); /* Frosted glass effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(50, 205, 50, 0.3);
+    padding: 40px;
+    margin: 60px auto;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.art-card::before, .art-card::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 2px solid cyan;
+    z-index: 5;
+}
+.art-card::before { top: 0; left: 0; border-right: none; border-bottom: none; }
+.art-card::after { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+.art-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: #32CD32;
+    box-shadow: 0 0 30px rgba(50, 205, 50, 0.15);
+    transform: translateY(-5px); /* No more tilt! */
+}
+
+/* Disable the manual rotation from HTML inline styles */
+.art-card[style] {
+    transform: none !important;
+}
+
+/* Hide the tape
+.tape-strip {
+    display: none;
+}
+
+/* Typography */
+.project-name {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+    text-transform: lowercase;
+    letter-spacing: -1px;
+    transition: 0.3s;
+}
+
+.project-name::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Covers the whole card */
+}
+
+.art-card:hover .project-name {
+    color: #32CD32;
+    text-shadow: 0 0 10px rgba(50, 205, 50, 0.6);
+}
+
+.location-tag {
+    font-family: monospace;
+    font-size: 10px;
+    color: #000;
+    background: #ff00ff; /* Neon Pink Tag */
+    padding: 2px 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
+.description {
+    color: #ccc;
+    line-height: 1.7;
+    margin: 30px 0;
+    font-size: 1rem;
+}
+
+/* YOUR FAVORITE LIST STYLE - Polished for Techy vibe */
+.tech-manifest {
+    list-style: none;
+    padding: 20px 0 0 0;
+    margin: 0;
+    border-top: 1px solid rgba(0, 255, 255, 0.2); /* Cyan divider */
+    font-family: monospace;
+    font-size: 13px;
+}
+
+.tech-manifest li {
+    margin-bottom: 10px;
+    color: #aaa;
+    display: flex;
+}
+
+.tech-manifest li span {
+    color: #32CD32; /* Lime Green Headers */
+    font-weight: bold;
+    min-width: 100px;
+    display: inline-block;
+}
+
+/* Lost Project Glitch Vibe */
+.lost-project {
+    border: 1px dashed rgba(255, 0, 0, 0.5);
+    background: rgba(255, 0, 0, 0.02);
+}
+
+.lost-project .project-name {
+    color: #ff4444;
+}
