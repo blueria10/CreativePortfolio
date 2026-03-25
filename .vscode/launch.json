@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "C:/Users/Owner/Documents/DigitalArt/portfolio-for-digital-arts-course/src/index.html"
+            "file": "C:/Users/Owner/Documents/DigitalArt/portfolio-for-digital-arts-course/index.html"
         }
     ]
 }
