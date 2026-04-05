@@ -1,4 +1,6 @@
-
+* {
+  box-sizing: border-box;
+}
 /* ---- NAV BAR ---- */
 nav {
   position: fixed;

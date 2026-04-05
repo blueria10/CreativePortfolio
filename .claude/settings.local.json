@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -Prn \"[\\\\x{2018}\\\\x{2019}\\\\x{201C}\\\\x{201D}]\" index.html src/*.html)"
+    ]
+  }
+}
