@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Tech — Emmanuella Desruisseaux</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="icon" type="image/x-icon" href="src/namefavicon.ico">
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">HOME</a>
+  <a href="about.html">ABOUT</a>
+  <a href="art.html">ART</a>
+  <a href="tech.html">TECH</a>
+  <a href="creative-tech.html" class="active">CREATIVE.TECH</a>
+  <a href="writing.html">WRITING</a>
+  <a href="exhibitions.html">EXHIBITIONS</a>
+</nav>
+
+<div class="y2k-sticker">EST. 2026</div>
+<div class="y2k-sticker blue-sticker">OPEN TO WORK</div>
+
+<br>
+<br>
+<h2>Creative Tech</h2>
+<div id='artTech'>
+    <p>In all honesty, most of the work I've done can fall under creative tech...</p>
+
+    <br>
+    <a href="https://ed58.myportfolio.com/ux-design" title="Creative Tech Portfolio">What does creative tech look like?</a>
+
+    <div class="tv-row">
+    <div class="video-monitor" onclick="window.open('https://blueria10.github.io/Emmanuella-s-The-Lyric-Catalyst/', '_blank')">
+        <video autoplay muted loop playsinline preload="auto" class="tv-content">
+            <source src="src/Videos/TheLyricCatalyst.mp4" type="video/mp4">
+        </video>
+        <div class="scanline-overlay"></div>
+        <div class="monitor-label">FEED_01 // SRC:ART</div>
+    </div>
+
+    <div class="video-monitor" onclick="window.open('https://blueria10.github.io/Look-Again-Zine/', '_blank')">
+        <video autoplay muted loop playsinline preload="auto" class="tv-content">
+            <source src="src/Videos/LookAgainZine.mp4" type="video/mp4">
+        </video>
+        <div class="scanline-overlay"></div>
+        <div class="monitor-label">FEED_02 // SRC:TECH</div>
+    </div>
+
+    <div class="video-monitor" onclick="window.open('https://ed58.myportfolio.com/construction-landscape-website', '_blank')">
+        <video autoplay muted loop playsinline preload="auto" class="tv-content">
+            <source src="src/Videos/ConsLand.mp4" type="video/mp4">
+        </video>
+        <div class="scanline-overlay"></div>
+        <div class="monitor-label">FEED_03 // SRC:LIVE</div>
+    </div>
+    </div>
+</div>
+
+<h2 id="ux">UX / Interface Design</h2>
+
+<div class="design-section">
+
+    <div class="design-card">
+        <div class="design-card-img">
+            <img src="https://cdn.myportfolio.com/ad582adc-8638-4016-8884-8af291b20599/86408e11-65a6-4d9b-9f9e-536b501c7c83_rwc_19x0x529x414x640.png?h=1426418c0e2364d6aed3c646940b24ce" alt="12twenty Redesign">
+        </div>
+        <div class="design-card-body">
+            <h3>12twenty redesign</h3>
+            <div class="skill-tags">
+                <span class="skill-tag">Usability Testing</span>
+                <span class="skill-tag">Heuristic Evaluation</span>
+                <span class="skill-tag">Prototyping</span>
+                <span class="skill-tag">Interaction Design</span>
+                <span class="skill-tag">Figma</span>
+            </div>
+            <p>Rice University students rely on the 12twenty career portal to navigate internships, full-time roles, and employer relationships, yet the platform frequently added confusion to an already stressful process. The fragmented "Employers," "Target Employers," and "Contacts" tabs increased cognitive load at the exact moments students needed clarity.<br><br>
+            This redesign merges the three tabs into a unified "Employer Network," reorganizing filters around student mental models, simplifying navigation, and redesigning the employer detail page to surface what actually matters during a job search.</p>
+            <a href="https://ed58.myportfolio.com/12twenty-redesign" class="view-link" target="_blank">View Project →</a>
+        </div>
+    </div>
+
+    <div class="design-card">
+        <div class="design-card-img">
+            <img src="https://cdn.myportfolio.com/ad582adc-8638-4016-8884-8af291b20599/1f5e132c-3dbc-400d-9e0f-904df0e9db0b_rw_1200.png?h=681a051aca4d4397925f30d660332d53" alt="Esther Redesign">
+        </div>
+        <div class="design-card-body">
+            <h3>esther redesign</h3>
+            <div class="skill-tags">
+                <span class="skill-tag">Literature Review</span>
+                <span class="skill-tag">Card Sorting</span>
+                <span class="skill-tag">Usability Testing</span>
+                <span class="skill-tag">Comparative Benchmarking</span>
+                <span class="skill-tag">Figma</span>
+            </div>
+            <p>Esther is Rice University's self-service student portal for registration, financial aid, and academic records. Students, faculty, and alumni frequently encountered issues with navigation, consistency, and accessibility that hindered their ability to access services effectively.<br><br>
+            My team conducted a full usability evaluation and redesign, including literature review, comparative benchmarking, card sorting, usability testing, and flow chart documentation, to create a user-centered solution for a complex, high-stakes system.</p>
+            <a href="https://ed58.myportfolio.com/esther-redesign" class="view-link" target="_blank">View Project →</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('video').forEach(function (v) {
+      v.muted = true;
+      v.play().catch(function () {});
+    });
+  });
+</script>
+</body>
+</html>
