@@ -312,6 +312,11 @@ hr {
     width: 95%; /* Spans most of the page */
     max-width: 1200px;
 }
+.tv-alone{
+    width:70%;
+    margin-left: 20%;
+
+}
 
 /* The Monitor Body */
 .video-monitor {
@@ -383,6 +388,11 @@ hr {
     /* Brighter border and Cyan shadow for that "Active" look */
     border-color: #333;
     box-shadow: 25px 25px 0px cyan; 
+}
+.tv-alone .video-monitor:hover {
+    transform: none !important;
+
+    z-index: auto !important;
 }
 
 
