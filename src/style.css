@@ -129,8 +129,8 @@ body {
 
 /* Section Containers */
 div[id] {
-  padding: 20px 10% 80px;
-  max-width: 1200px;
+  padding: 20px 4% 80px; /* Adjusted to 4% for wider display capabilities */
+  max-width: 1600px; /* Expanded limit to let cards expand horizontally */
   margin: 0 auto;
 }
 
@@ -157,14 +157,14 @@ p {
 /* Art Gallery - Interactive Grid */
 #artOnly {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Updated minimal baseline sizing */
+  gap: 25px;
   margin-top: 40px;
 }
 
 #artOnly img {
   width: 100%;
-  height: 350px;
+  height: 380px;
   object-fit: cover;
   border: 1px solid #333;
   filter: grayscale(100%) brightness(0.7);
@@ -313,9 +313,10 @@ hr {
     max-width: 1200px;
 }
 .tv-alone{
-    width:70%;
-    margin-left: 20%;
-
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
 }
 
 /* The Monitor Body */
@@ -328,8 +329,14 @@ hr {
 	min-width: 400px; /* So they never get too tiny */
     box-shadow: 
         inset 0 0 15px rgba(0,0,0,1), /* Inner shadow for depth */
-        8px 8px 0px #ff00ff; /*  Indie Pink shadow */
+        8px 8px 0px #ff00ff; /* Indie Pink shadow */
     overflow: hidden;
+}
+
+/* Structural target for the giant monitor viewport configuration */
+.feed-one-giant {
+    width: 100% !important;
+    max-width: 950px !important;
 }
 
 /* The Curved Glass Screen Effect */
@@ -378,7 +385,7 @@ hr {
     z-index: 6;
 }
 /* --- THE HOVER "POP" --- */
-.video-monitor:hover {
+.video-monitor:not(.feed-one-giant):hover {
     /* Scale(1.15) makes it significantly larger */
     transform: scale(1.4) translateY(-20px); 
     
@@ -389,10 +396,12 @@ hr {
     border-color: #333;
     box-shadow: 25px 25px 0px cyan; 
 }
-.tv-alone .video-monitor:hover {
-    transform: none !important;
 
-    z-index: auto !important;
+.feed-one-giant:hover {
+    transform: scale(1.03);
+    border-color: #333;
+    box-shadow: 15px 15px 0px cyan;
+    z-index: 100;
 }
 
 
@@ -449,7 +458,7 @@ hr {
     transform: none !important;
 }
 
-/* Hide the tape
+/* Hide the tape */
 .tape-strip {
     display: none;
 }
@@ -578,8 +587,9 @@ hr {
 
 /* ---- DESIGN PAGE ---- */
 .design-section {
-    padding: 0 10%;
-    max-width: 1200px;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
     margin: 30px auto 80px;
 }
 
@@ -588,12 +598,16 @@ hr {
     gap: 40px;
     align-items: flex-start;
     border: 1px solid rgba(50, 205, 50, 0.25);
-    padding: 35px;
+    padding: 40px;
     margin-bottom: 40px;
     position: relative;
     transition: all 0.35s ease;
     background: rgba(0,0,0,0.6);
     overflow: hidden;
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .design-card::before {
@@ -620,7 +634,7 @@ hr {
 
 .design-card-img {
     flex-shrink: 0;
-    width: 280px;
+    width: 340px;
     overflow: hidden;
     border: 2px solid #1a1a1a;
 }
@@ -640,7 +654,7 @@ hr {
 }
 
 .design-card-body h3 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     color: #fff;
     margin: 0 0 12px;
     font-family: 'Courier New', monospace;
@@ -650,10 +664,10 @@ hr {
 
 .design-card-body p {
     color: #aaa;
-    font-size: 0.9rem;
-    line-height: 1.75;
-    margin-bottom: 20px;
-    max-width: 580px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    max-width: 90%;
 }
 
 .skill-tags {
