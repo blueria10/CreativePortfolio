@@ -438,7 +438,7 @@ hr {
 .art-card::before, .art-card::after {
     content: '';
     position: absolute;
-    width: 15px;
+    width: 100px;
     height: 15px;
     border: 2px solid cyan;
     z-index: 5;
