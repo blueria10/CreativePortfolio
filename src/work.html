@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="namefavicon.ico">
     <style>
-        /* Centered, oversized filter buttons */
+        /* Center and style the larger, custom filter controls */
         .work-filter-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 24px;
             margin: 50px 0;
             flex-wrap: wrap;
         }
@@ -20,9 +20,9 @@
             background: none;
             border: 2px solid #32CD32;
             color: #32CD32;
-            padding: 16px 32px; /* Oversized padding */
+            padding: 16px 32px;
             font-family: 'Courier New', Courier, monospace;
-            font-size: 18px; /* Larger font size */
+            font-size: 18px;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -40,7 +40,7 @@
             background: rgba(0, 255, 255, 0.05);
         }
 
-        /* Pure Tab Switching logic (No structural overrides) */
+        /* Clean Tab Navigation engine toggles */
         .work-section {
             display: none;
         }
@@ -49,20 +49,16 @@
             display: block;
         }
 
-        /* Subtle Section Header for internal UX/Tech separation */
-        .sub-view-label {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.4);
+        /* Subtle label separator element for the UX and Tech systems split */
+        .tech-separator-label {
+            font-family: 'Courier New', monospace;
+            font-size: 15px;
+            font-weight: bold;
+            color: #00ffff;
+            text-shadow: 2px 2px 0px #ff00ff;
             letter-spacing: 2px;
-            margin: 40px 0 20px 0;
-        }
-
-        /* Explicit sizing adjustment to force FEED_01 larger */
-        .upsized-feed {
-            transform: scale(1.25);
-            margin: 40px auto !important;
-            transform-origin: center;
+            margin: 60px 0 20px;
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -83,7 +79,7 @@
 
 <div class="work-filter-container">
     <button class="filter-btn active-btn" onclick="switchTab('creative-tech', this)">CREATIVE TECH</button>
-    <button class="filter-btn" onclick="switchTab('ux-tech-systems', this)">UX/UI & TECH</button>
+    <button class="filter-btn" onclick="switchTab('ux-tech-systems', this)">UX & TECH SYSTEMS</button>
     <button class="filter-btn" onclick="switchTab('physical-art', this)">PHYSICAL ART</button>
 </div>
 
@@ -100,7 +96,7 @@
         
         <div class="tv-alone">
             <br>
-            <div class="video-monitor upsized-feed" onclick="window.open('https://blueria10.github.io/digital-exhaust/', '_blank')">
+            <div class="video-monitor feed-one-giant" onclick="window.open('https://blueria10.github.io/digital-exhaust/', '_blank')">
                 <video autoplay muted loop playsinline preload="auto" class="tv-content">
                     <source src="Videos/DigitalExhaustVid.mp4" type="video/mp4">
                 </video>
@@ -141,8 +137,8 @@
 <div id="ux-tech-systems" class="work-section">
     <h2>UX / Interface Design</h2>
     
-    <div class="design-section" style="width: 100%; max-width: 1200px; margin: 0 auto;">
-        <div class="design-card" style="width: 100% !important; max-width: 100% !important; margin-bottom: 30px;">
+    <div class="design-section">
+        <div class="design-card">
             <div class="design-card-img">
                 <img src="https://cdn.myportfolio.com/ad582adc-8638-4016-8884-8af291b20599/86408e11-65a6-4d9b-9f9e-536b501c7c83_rwc_19x0x529x414x640.png?h=1426418c0e2364d6aed3c646940b24ce" alt="12twenty Redesign">
             </div>
@@ -161,7 +157,7 @@
             </div>
         </div>
 
-        <div class="design-card" style="width: 100% !important; max-width: 100% !important; margin-bottom: 30px;">
+        <div class="design-card">
             <div class="design-card-img">
                 <img src="https://cdn.myportfolio.com/ad582adc-8638-4016-8884-8af291b20599/1f5e132c-3dbc-400d-9e0f-904df0e9db0b_rw_1200.png?h=681a051aca4d4397925f30d660332d53" alt="Esther Redesign">
             </div>
@@ -180,14 +176,13 @@
             </div>
         </div>
 
-        <br><br>
-        <div class="sub-view-label">// TECH SYSTEMS</div>
+        <div class="tech-separator-label">[ system_log // core_tech_systems ]</div>
         
         <div id='techOnly' style="margin-bottom: 30px;">
             <p>When I was a computer science major my first 2 years of college, I focused a lot on creating personal projects using Python, Flask, Java, and more. My goal was to build things that could actually help people. I also have a deep interest in electrical engineering, having built hardware projects ranging from an autonomous car to a medical training device.</p>
         </div>
 
-        <div class="design-card" style="width: 100% !important; max-width: 100% !important; margin-bottom: 30px;">
+        <div class="design-card">
             <div class="design-card-img">
                 <img src="https://cdn.myportfolio.com/ad582adc-8638-4016-8884-8af291b20599/3e50c0d7-6b5d-4e7c-9a3e-27d1c2b338db_carw_202x158x640.png?h=7d0e169f253a415c23d44da4bbc9802d" alt="Should I Reply SMS App">
             </div>
@@ -204,7 +199,7 @@
             </div>
         </div>
 
-        <div class="design-card" style="width: 100% !important; max-width: 100% !important; margin-bottom: 30px;">
+        <div class="design-card">
             <div class="design-card-img">
                 <img src="https://hackster.imgix.net/uploads/attachments/1844167/_y75xzlZGMA.blob?auto=compress%2Cformat&w=900&h=675&fit=min" alt="Neglect Autonomous Car">
             </div>
@@ -221,7 +216,7 @@
             </div>
         </div>
 
-        <div class="design-card" style="width: 100% !important; max-width: 100% !important; margin-bottom: 30px;">
+        <div class="design-card">
             <div class="design-card-img">
                 <img src="https://cdn.myportfolio.com/ad582adc-8638-4016-8884-8af291b20599/6db35ec8-869c-4235-94d3-81efc57007cf_carw_202x158x640.png?h=bb67a9d46a21c02da5fa633ecac408be" alt="C.H.I.M.E">
             </div>
