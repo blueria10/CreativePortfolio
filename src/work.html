@@ -18,37 +18,86 @@
 
         .filter-btn {
             background: none;
-            border: 2px solid #32CD32; /* Same starting color */
+            border: 2px solid #32CD32;
             color: #32CD32;
             padding: 12px 24px;
             font-family: 'Courier New', Courier, monospace;
-            font-size: 16px; /* Slightly larger text */
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        /* Hover state changes to a different color (Cyan) */
         .filter-btn:hover {
             color: #00ffff;
             border-color: #00ffff;
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
         }
 
-        /* Active/Selected button state */
         .filter-btn.active-btn {
             color: #00ffff;
             border-color: #00ffff;
             background: rgba(0, 255, 255, 0.05);
         }
 
-        /* Hide all sections by default, show via JS */
+        /* Hide all sections by default */
         .work-section {
             display: none;
+            max-width: 1100px; /* Expands container width */
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .work-section.active-section {
             display: block;
+        }
+
+        /* Widening the Design Section Cards */
+        .design-section {
+            display: flex;
+            flex-direction: column; /* Stack vertically for a wider, cleaner layout */
+            gap: 30px;
+            width: 100%;
+        }
+
+        .design-card {
+            display: flex; /* Side-by-side image and text layout */
+            width: 100%;
+            max-width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #0a0a0a;
+            box-sizing: border-box;
+        }
+
+        .design-card-img {
+            width: 35%; /* Gives image an elegant, wider footprint */
+            min-width: 250px;
+        }
+
+        .design-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .design-card-body {
+            width: 65%;
+            padding: 30px;
+        }
+
+        /* Upsizing FEED_01 in Creative Tech */
+        .tv-alone .video-monitor {
+            max-width: 850px; /* Makes Feed 1 noticeably larger than the row below */
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .design-card {
+                flex-direction: column;
+            }
+            .design-card-img, .design-card-body {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -69,8 +118,7 @@
 
 <div class="work-filter-container">
     <button class="filter-btn active-btn" onclick="switchTab('creative-tech', this)">CREATIVE TECH</button>
-    <button class="filter-btn" onclick="switchTab('ux-design', this)">UX DESIGN</button>
-    <button class="filter-btn" onclick="switchTab('tech-projects', this)">TECH PROJECTS</button>
+    <button class="filter-btn" onclick="switchTab('ux-tech-systems', this)">UX & TECH SYSTEMS</button>
     <button class="filter-btn" onclick="switchTab('physical-art', this)">PHYSICAL ART</button>
 </div>
 
@@ -94,9 +142,9 @@
                 <div class="monitor-label">FEED_01 // SRC:MOST RECENT</div>
             </div>
         </div>
+        
         <div class="tv-row">
             <br>
-
             <div class="video-monitor" onclick="window.open('https://blueria10.github.io/Emmanuella-s-The-Lyric-Catalyst/', '_blank')">
                 <video autoplay muted loop playsinline preload="auto" class="tv-content">
                     <source src="Videos/TheLyricCatalyst.mp4" type="video/mp4">
@@ -124,8 +172,13 @@
     </div>
 </div>
 
-<div id="ux-design" class="work-section">
-    <h2>UX / Interface Design</h2>
+<div id="ux-tech-systems" class="work-section">
+    <h2>UX & Tech Systems</h2>
+    
+    <div id='techOnly' style="margin-bottom: 40px;">
+        <p>When I was a computer science major my first 2 years of college, I focused a lot on creating personal projects using Python, Flask, Java, and more. My goal was to build things that could actually help people. I also have a deep interest in electrical engineering, having built hardware projects ranging from an autonomous car to a medical training device.</p>
+    </div>
+
     <div class="design-section">
         <div class="design-card">
             <div class="design-card-img">
@@ -164,16 +217,7 @@
                 <a href="https://ed58.myportfolio.com/esther-redesign" class="view-link" target="_blank">View Project →</a>
             </div>
         </div>
-    </div>
-</div>
 
-<div id="tech-projects" class="work-section">
-    <h2>Tech Projects</h2>
-    <div id='techOnly'>
-        <p>When I was a computer science major my first 2 years of college, I focused a lot on creating personal projects using Python, Flask, Java, and more. My goal was to build things that could actually help people. I also have a deep interest in electrical engineering, having built hardware projects ranging from an autonomous car to a medical training device.</p>
-    </div>
-
-    <div class="design-section">
         <div class="design-card">
             <div class="design-card-img">
                 <img src="https://cdn.myportfolio.com/ad582adc-8638-4016-8884-8af291b20599/3e50c0d7-6b5d-4e7c-9a3e-27d1c2b338db_carw_202x158x640.png?h=7d0e169f253a415c23d44da4bbc9802d" alt="Should I Reply SMS App">
@@ -266,28 +310,23 @@
 
 <script>
     function switchTab(sectionId, clickedButton) {
-        // Hide all sections
         document.querySelectorAll('.work-section').forEach(section => {
             section.classList.remove('active-section');
         });
         
-        // Remove active class from all buttons
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.classList.remove('active-btn');
         });
 
-        // Show the chosen section and activate the button
         document.getElementById(sectionId).classList.add('active-section');
         clickedButton.classList.add('active-btn');
         
-        // Make sure running videos play correctly in active tabs
         document.querySelectorAll('#' + sectionId + ' video').forEach(v => {
             v.muted = true;
             v.play().catch(() => {});
         });
     }
 
-    // Initialize background autoplay for the default tab
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('#creative-tech video').forEach(function (v) {
             v.muted = true;
