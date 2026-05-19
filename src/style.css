@@ -854,3 +854,72 @@ hr {
     transform: translateX(6px);
     box-shadow: -4px 0 0 #ff00ff;
 }
+
+/* ---- MOODY EXHIBITION ROW STYLING ---- */
+
+/* Container forcing cards side-by-side */
+.moody-row-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 30px auto 50px;
+  width: 100%;
+}
+
+/* Sizing overrides to make individual cards more compact */
+.moody-compact-card {
+  flex: 1; /* Automatically sets each of the three cards to take up exactly 1/3 width */
+  margin: 0 !important;
+  max-width: 32% !important;
+  padding: 25px 20px !important;
+}
+
+/* Compact layout typography tweaks */
+.moody-compact-card .project-name {
+  font-size: 1.4rem !important;
+}
+
+.moody-compact-card .description {
+  font-size: 0.88rem !important;
+  margin: 15px 0 !important;
+  line-height: 1.5;
+}
+
+.moody-compact-card .tech-manifest {
+  font-size: 11px !important;
+  padding-top: 12px !important;
+}
+
+/* Color Lock: Overrides global grayscale rules to show images in full natural color */
+.design-card-img-color {
+  width: 100%;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border: 1px solid #222;
+}
+
+.design-card-img-color img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  filter: none !important; /* Strips away global grayscale and brightness locks */
+  transition: transform 0.3s ease;
+}
+
+.moody-compact-card:hover .design-card-img-color img {
+  transform: scale(1.04);
+}
+
+/* Mobile Fallback: Converts the row back to stack layout on smaller mobile viewports */
+@media (max-width: 900px) {
+  .moody-row-container {
+    flex-direction: column;
+    gap: 35px;
+  }
+  .moody-compact-card {
+    max-width: 100% !important;
+    width: 100%;
+  }
+}
